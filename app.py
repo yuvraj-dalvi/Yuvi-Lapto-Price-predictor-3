@@ -7,7 +7,7 @@ import pandas as pd
 df = pd.read_csv("df.csv")
 pipe = pickle.load(open("pipe.pkl", "rb"))
 
-st.title("Laptop Price Predictor")
+st.title("NAMASTE! Welcome to YUVI'S Laptop Price Estimator : ) ")
 
 #Now we will take user input one by one as per our dataframe
 
@@ -57,5 +57,5 @@ if st.button('Predict Price'):
     query = np.array([company,lap_type,ram,weight,touchscreen,ips,ppi,cpu,hdd,ssd,gpu,os])
     query = query.reshape(1, 12)
     prediction = str(int(np.exp(pipe.predict(query)[0])))
-    st.title("The predicted price of this configuration is " + prediction)
+    st.title("Thanks for your Enquiry! The estimated price of this configuration is ₹" + prediction)
     
